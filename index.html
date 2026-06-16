@@ -14,7 +14,7 @@
 
     <div class="dashboard-container">
         
-        <aside class="sidebar">
+        <aside class="sidebar" id="sidebarPanel">
             <div class="logo">
                 <i class="fa-solid fa-cubes logo-icon"></i>
                 <h2>BarangayConnect</h2>
@@ -32,6 +32,10 @@
         <div class="main-wrapper">
             
             <header class="top-header">
+                <button class="menu-toggle" onclick="toggleMobileSidebar()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
                 <div class="header-right">
                     <div class="notification-icon">
                         <i class="fa-regular fa-bell"></i>
@@ -51,6 +55,7 @@
                 <div class="upper-grid">
                     
                     <section class="announcements-card">
+                        <h3>Community Announcements</h3>
                         <div class="announcements-grid">
                             <div class="announcement-item">
                                 <div class="card-meta">
@@ -103,7 +108,7 @@
                                     <span class="badge monitors">Monitors</span>
                                 </div>
                                 <h3>Barangay Clearance Reminder</h3>
-                                <p>Residents with pending barangay clearances may claim them at the barangay office during office hours.</p>
+                                <p>Residents with pending clearances may claim them at the barangay office during hours.</p>
                                 <a href="#" class="read-more">Read More</a>
                             </div>
                         </div>
@@ -212,5 +217,19 @@
         </div>
     </div>
 
+    <script>
+        function toggleMobileSidebar() {
+            const sidebar = document.getElementById('sidebarPanel');
+            sidebar.classList.toggle('active');
+        }
+        
+        document.addEventListener('click', function(event) {
+            const sidebar = document.getElementById('sidebarPanel');
+            const toggleBtn = document.querySelector('.menu-toggle');
+            if (window.innerWidth <= 768 && !sidebar.contains(event.target) && !toggleBtn.contains(event.target)) {
+                sidebar.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
