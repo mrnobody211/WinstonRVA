@@ -14,7 +14,7 @@
 
     <div class="dashboard-container">
         
-        <aside class="sidebar" id="sidebarPanel">
+        <aside class="sidebar">
             <div class="logo">
                 <i class="fa-solid fa-cubes logo-icon"></i>
                 <h2>BarangayConnect</h2>
@@ -32,10 +32,10 @@
         <div class="main-wrapper">
             
             <header class="top-header">
-                <button class="menu-toggle" onclick="toggleMobileSidebar()">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-
+                <div class="mobile-header-brand">
+                    <i class="fa-solid fa-cubes logo-icon"></i>
+                    <h2>BarangayConnect</h2>
+                </div>
                 <div class="header-right">
                     <div class="notification-icon">
                         <i class="fa-regular fa-bell"></i>
@@ -49,18 +49,49 @@
             </header>
 
             <main class="main-content">
-                <h1 class="page-title">Dashboard Overview</h1>
+                <div class="desktop-only">
+                    <h1 class="page-title">Dashboard Overview</h1>
+                </div>
                 <h2 class="welcome-text">Welcome, Resident!</h2>
+                <p class="mobile-subtitle">Community management platform.</p>
+
+                <div class="mobile-search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+
+                <div class="mobile-quick-actions">
+                    <div class="action-btn">
+                        <div class="action-icon-wrapper">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <span>Report an issue</span>
+                    </div>
+                    <div class="action-btn">
+                        <div class="action-icon-wrapper">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <span>Request Document</span>
+                    </div>
+                    <div class="action-btn">
+                        <div class="action-icon-wrapper">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
+                        <span>View Announcements</span>
+                    </div>
+                </div>
+
+                <h3 class="mobile-section-heading">Latest Updates</h3>
 
                 <div class="upper-grid">
                     
                     <section class="announcements-card">
-                        <h3>Community Announcements</h3>
                         <div class="announcements-grid">
                             <div class="announcement-item">
                                 <div class="card-meta">
                                     <span class="card-date">Apr 25, 2026</span>
                                     <span class="badge maintenance">Maintenance</span>
+                                    <i class="fa-solid fa-bell mobile-card-bell"></i>
                                 </div>
                                 <h3>Water Interruption Notice</h3>
                                 <p>There will be a temporary interruption of water service in some areas.</p>
@@ -70,12 +101,13 @@
                                 <div class="card-meta">
                                     <span class="card-date">Apr 25, 2026</span>
                                     <span class="badge sanitation">Sanitation</span>
+                                    <i class="fa-solid fa-circle-plus mobile-card-plus"></i>
                                 </div>
                                 <h3>Garbage Collection Schedule Update</h3>
                                 <p>The garbage collection schedule has been adjusted.</p>
                                 <a href="#" class="read-more">Read More</a>
                             </div>
-                            <div class="announcement-item">
+                            <div class="announcement-item desktop-only">
                                 <div class="card-meta">
                                     <span class="card-date">Apr 25, 2026</span>
                                     <span class="badge health">Health or Events</span>
@@ -84,7 +116,7 @@
                                 <p>Residents are invited to join the upcoming free health checkup and consultation program.</p>
                                 <a href="#" class="read-more">Read More</a>
                             </div>
-                            <div class="announcement-item">
+                            <div class="announcement-item desktop-only">
                                 <div class="card-meta">
                                     <span class="card-date">Apr 25, 2026</span>
                                     <span class="badge community">Community</span>
@@ -93,7 +125,7 @@
                                 <p>Join the community clean-up activity this weekend to help keep our neighborhood clean and safe.</p>
                                 <a href="#" class="read-more">Read More</a>
                             </div>
-                            <div class="announcement-item">
+                            <div class="announcement-item desktop-only">
                                 <div class="card-meta">
                                     <span class="card-date">Apr 25, 2026</span>
                                     <span class="badge meetings">Meetings</span>
@@ -102,13 +134,13 @@
                                 <p>All residents are encouraged to attend the upcoming barangay assembly meeting.</p>
                                 <a href="#" class="read-more">Read More</a>
                             </div>
-                            <div class="announcement-item">
+                            <div class="announcement-item desktop-only">
                                 <div class="card-meta">
                                     <span class="card-date">Apr 25, 2026</span>
                                     <span class="badge monitors">Monitors</span>
                                 </div>
                                 <h3>Barangay Clearance Reminder</h3>
-                                <p>Residents with pending clearances may claim them at the barangay office during hours.</p>
+                                <p>Residents with pending barangay clearances may claim them at the barangay office during office hours.</p>
                                 <a href="#" class="read-more">Read More</a>
                             </div>
                         </div>
@@ -127,8 +159,41 @@
                     </aside>
                 </div>
 
+                <div class="mobile-summary-cards">
+                    <div class="summary-row-card">
+                        <div class="summary-left">
+                            <div class="summary-icon-circle">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                            </div>
+                            <div class="summary-details">
+                                <h4>Incident Reports</h4>
+                                <span class="summary-subtext">Clogged status</span>
+                            </div>
+                        </div>
+                        <div class="summary-right">
+                            <div class="progress-line-container">
+                                <div class="progress-line-bar"></div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    <div class="summary-row-card">
+                        <div class="summary-left">
+                            <div class="summary-icon-circle">
+                                <i class="fa-solid fa-file-invoice"></i>
+                            </div>
+                            <div class="summary-details">
+                                <h4>Document Requests</h4>
+                                <span class="summary-subtext">Ready for Pickup</span>
+                            </div>
+                        </div>
+                        <div class="summary-right">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="lower-grid">
-                    
                     <section class="table-card">
                         <h3>Recent Incident Reports</h3>
                         <div class="table-responsive">
@@ -217,19 +282,28 @@
         </div>
     </div>
 
-    <script>
-        function toggleMobileSidebar() {
-            const sidebar = document.getElementById('sidebarPanel');
-            sidebar.classList.toggle('active');
-        }
-        
-        document.addEventListener('click', function(event) {
-            const sidebar = document.getElementById('sidebarPanel');
-            const toggleBtn = document.querySelector('.menu-toggle');
-            if (window.innerWidth <= 768 && !sidebar.contains(event.target) && !toggleBtn.contains(event.target)) {
-                sidebar.classList.remove('active');
-            }
-        });
-    </script>
+    <nav class="mobile-bottom-nav">
+        <a href="#" class="bottom-nav-item active">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </a>
+        <a href="#" class="bottom-nav-item">
+            <i class="fa-solid fa-bell"></i>
+            <span>Alerts</span>
+        </a>
+        <a href="#" class="bottom-nav-item">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Report</span>
+        </a>
+        <a href="#" class="bottom-nav-item">
+            <i class="fa-solid fa-file-invoice"></i>
+            <span>Documents</span>
+        </a>
+        <a href="#" class="bottom-nav-item">
+            <i class="fa-solid fa-user"></i>
+            <span>Profile</span>
+        </a>
+    </nav>
+
 </body>
 </html>
